@@ -1,0 +1,131 @@
+EESchema Schematic File Version 4
+EELAYER 30 0
+EELAYER END
+$Descr A4 11693 8268
+encoding utf-8
+Sheet 1 1
+Title ""
+Date ""
+Rev ""
+Comp ""
+Comment1 ""
+Comment2 ""
+Comment3 ""
+Comment4 ""
+$EndDescr
+$Comp
+L MCU_Module:Arduino_UNO_R3 A1
+U 1 1 61ABC7DC
+P 3950 1950
+F 0 "A1" H 3950 3131 50  0000 C CNN
+F 1 "Arduino Uno R3" H 3950 3040 50  0000 C CNN
+F 2 "Module:Arduino_UNO_R3" H 3950 1950 50  0001 C CIN
+F 3 "https://www.arduino.cc/en/Main/arduinoBoardUno" H 3950 1950 50  0001 C CNN
+	1    3950 1950
+	1    0    0    -1  
+$EndComp
+$Comp
+L Device:LED D2
+U 1 1 61ACAD8B
+P 2400 2000
+F 0 "D2" H 2393 2217 50  0000 C CNN
+F 1 "YELLOW_LED" H 2393 2126 50  0000 C CNN
+F 2 "" H 2400 2000 50  0001 C CNN
+F 3 "~" H 2400 2000 50  0001 C CNN
+	1    2400 2000
+	1    0    0    -1  
+$EndComp
+$Comp
+L Device:LED D3
+U 1 1 61ACB7E2
+P 2400 2400
+F 0 "D3" H 2393 2617 50  0000 C CNN
+F 1 "GREEN_LED" H 2393 2526 50  0000 C CNN
+F 2 "" H 2400 2400 50  0001 C CNN
+F 3 "~" H 2400 2400 50  0001 C CNN
+	1    2400 2400
+	1    0    0    -1  
+$EndComp
+$Comp
+L Device:LED D1
+U 1 1 61AD3E0B
+P 2400 1550
+F 0 "D1" H 2393 1767 50  0000 C CNN
+F 1 "RED_LED" H 2393 1676 50  0000 C CNN
+F 2 "" H 2400 1550 50  0001 C CNN
+F 3 "~" H 2400 1550 50  0001 C CNN
+	1    2400 1550
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	2250 1550 2100 1550
+Wire Wire Line
+	2100 1550 2100 2000
+Wire Wire Line
+	2250 2000 2100 2000
+Connection ~ 2100 2000
+Wire Wire Line
+	2250 2400 2100 2400
+Wire Wire Line
+	2100 2000 2100 2400
+Connection ~ 2100 2400
+Wire Wire Line
+	2100 2400 2100 3050
+$Comp
+L Device:R_Small_US R1
+U 1 1 61AD59AC
+P 2850 1550
+F 0 "R1" V 2645 1550 50  0000 C CNN
+F 1 "220R" V 2736 1550 50  0000 C CNN
+F 2 "" H 2850 1550 50  0001 C CNN
+F 3 "~" H 2850 1550 50  0001 C CNN
+	1    2850 1550
+	0    1    1    0   
+$EndComp
+$Comp
+L Device:R_Small_US R2
+U 1 1 61AD60B0
+P 2850 2000
+F 0 "R2" V 2645 2000 50  0000 C CNN
+F 1 "220R" V 2736 2000 50  0000 C CNN
+F 2 "" H 2850 2000 50  0001 C CNN
+F 3 "~" H 2850 2000 50  0001 C CNN
+	1    2850 2000
+	0    1    1    0   
+$EndComp
+$Comp
+L Device:R_Small_US R3
+U 1 1 61AD67C8
+P 2850 2400
+F 0 "R3" V 2645 2400 50  0000 C CNN
+F 1 "220R" V 2736 2400 50  0000 C CNN
+F 2 "" H 2850 2400 50  0001 C CNN
+F 3 "~" H 2850 2400 50  0001 C CNN
+	1    2850 2400
+	0    1    1    0   
+$EndComp
+Wire Wire Line
+	3150 2400 3150 1850
+Wire Wire Line
+	3150 1850 3450 1850
+Wire Wire Line
+	2950 1550 2950 1650
+Wire Wire Line
+	2950 1650 3450 1650
+Wire Wire Line
+	2950 2400 3150 2400
+Wire Wire Line
+	2550 2400 2750 2400
+Wire Wire Line
+	2550 2000 2750 2000
+Wire Wire Line
+	2550 1550 2750 1550
+Wire Wire Line
+	3450 1750 3100 1750
+Wire Wire Line
+	3100 1750 3100 2000
+Wire Wire Line
+	3100 2000 2950 2000
+Wire Wire Line
+	2100 3050 3850 3050
+$EndSCHEMATC
