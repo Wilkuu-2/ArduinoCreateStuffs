@@ -1,3 +1,7 @@
+# KiCad Stuff
+*.pro
+*.sch-bak
+
 # Prerequisites
 *.d
 
