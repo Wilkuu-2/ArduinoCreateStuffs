@@ -32,6 +32,9 @@ class TranscieverWidget extends AppWidget implements Updatable {
   // -- Creates all the widgets
   void initWidgets(EventPasser ev) {
     Class[] ledToggleParams = {int.class} ;
+    /*
+      Creates the buttons and indicators see Button and Indicator classes for more info
+    */
     led1Button = new Button(new PVector(20, 20), new PVector(120, 50), this, "LED1", getTranscieverTrigger("ledToggle", ledToggleParams, 0));
     led2Button = new Button(new PVector(20, 90), new PVector(120, 50), this, "LED2", getTranscieverTrigger("ledToggle", ledToggleParams, 1));
     led3Button = new Button(new PVector(20, 160), new PVector(120, 50), this, "LED3", getTranscieverTrigger("ledToggle", ledToggleParams, 2));
