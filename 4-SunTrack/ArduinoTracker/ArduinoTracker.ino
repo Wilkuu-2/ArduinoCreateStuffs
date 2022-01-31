@@ -42,9 +42,11 @@ void loop() {
       Serial.read();
     }
     //Send The data as string using a formatted string to ensure message length 
-    sprintf(message, "A%-4d,%-4d\n", measure, round(angle * 10.0));
-    Serial.print(message);
+    sprintf(message, "A%-4d,%-4d\n", measure, round(angle * 10.0)); //https://www.cplusplus.com/reference/cstdio/sprintf/
+    Serial.print(message); //If only serial had some sort of printf functionality instead of me having to use sprintf on a buffer
+
   }
+
 
   //Set the angle on the servo
   servo.write(angle);
