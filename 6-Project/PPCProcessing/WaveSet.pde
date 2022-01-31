@@ -4,10 +4,11 @@
  * A container for WaveProviders that can output the sum of the waves
  */
 
-
+import java.time.LocalDateTime;
 
 class WaveSet{
   ArrayList<WaveProv> waves;
+  // -- Constructors 
   WaveSet() {
     waves = new ArrayList<WaveProv>();
   }
@@ -15,6 +16,8 @@ class WaveSet{
     this();
     addWav(wav);
   }
+  
+  // -- Adding waves
   void addWav(WaveProv wav){
     waves.add(wav);
   }
@@ -33,5 +36,21 @@ class WaveSet{
   } 
   int getSize(){
     return waves.size();
+  }
+  
+  // -- Wrtiting to a file
+  void writeToFile(PrintWriter f){
+    // -- Header
+    f.println(String.format("** - WAVESET -- %s -** ", LocalDateTime.now()));
+    for(int i = 0; i < waves.size(); i++){
+       WaveProv w = waves.get(i);
+       f.println(String.format("WAVE: %d", i));
+       f.println(String.format("Volume: %f %%", w.getVol()*100 ));
+       f.println(String.format("Freq: %f", w.getFreq()));
+       f.println(String.format("Type: %s", w.getWaveName()));
+       f.println(String.format("Inverted: %s", w.getIsInverted() ? "YES" : "NO" ));
+    
+    }
+    f.flush();
   }
 }

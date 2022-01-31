@@ -1,42 +1,54 @@
-
-
+/* //<>// //<>// //<>// //<>// //<>// //<>//
+ * MainWidget 
+ * The parent of all widgets, also handles the joystick and selection 
+ * 
+ * 2022 - Jakub Stachurski 
+ */
+ 
 
 class MainWidget extends WWidget {
 
   Selectable selected = null;
   PVector prevXY = new PVector(0, 0);
   boolean prevClick = false;
-  
+
   MainWidget() {
     super(new PVector(0, 0), new PVector(width, height), null);
   }
 
   void _update(ArduinoReader r) {
-   PVector XY = roundXY(r,0.4);
-   PVector dXY = prevXY.sub(XY);
-   
-   if(dXY.x > 0 && XY.x != 0)
-     next();
-   if(dXY.x < 0 && XY.x != 0)
-     prev();
-   if(dXY.y < 0 && XY.y !=0)
-     config.chWaveform();
-   
-    prevXY = XY;
+
+    // -- Joystick
+    PVector XY = roundXY(r, 0.4);
+    PVector dXY = prevXY.sub(XY);
+
     
-    if(r.getSwClick()){
-      if(!prevClick && selected != null){
-          selected.onClick();
-          println("Click");
+    if (dXY.x > 0 && XY.x != 0) 
+      next(); //Change selection 
+    if (dXY.x < 0 && XY.x != 0) 
+      prev(); //Change selection 
+    if (dXY.y < 0 && XY.y !=0)
+      config.chWaveform(); // Change waveform 
+    if (dXY.y < 0 && XY.y !=0)
+        saveWaveSet(); // Save combination of waves to file 
+      
+
+    prevXY = XY;
+
+    // -- Switch 
+    if (r.getSwClick()) {
+      if (!prevClick && selected != null) {
+        selected.onClick();
+        println("Click");
       }
       prevClick = true;
-    }
-    else{
+    } else {
       prevClick = false;
     }
   }
 
-  PVector roundXY(ArduinoReader r,float sense) {
+  // -- Rounds the vector at a certain treshold
+  PVector roundXY(ArduinoReader r, float sense) {
     PVector out = new PVector();
     PVector in = r.getXY();
     out.x = (in.x > sense || in.x < -sense) ? in.x/abs(in.x) : 0;
@@ -88,14 +100,13 @@ class MainWidget extends WWidget {
 
       for (WWidget w : children) {
         if (w instanceof Selectable) {
-          if (w == current) { //<>//
-            pastCurrent = true; // Went past the current selectable //<>//
-
-          } else if (pastCurrent) { //<>//
-            last = (Selectable) w; // Saving the last found selectable in case of looping around //<>//
-          } else { //<>//
-            selected = (Selectable) w; // Found something before the current selectable //<>//
-            foundPrev = true; 
+          if (w == current) {
+            pastCurrent = true; // Went past the current selectable
+          } else if (pastCurrent) {
+            last = (Selectable) w; // Saving the last found selectable in case of looping around
+          } else {
+            selected = (Selectable) w; // Found something before the current selectable
+            foundPrev = true;
           }
         }
       }

@@ -51,6 +51,7 @@ class ArduinoReader{
   //it now uses a fixed length strings instead of raw data to improve debug abilities and simplify the system
   //(Taken from assignment 4 and redone )
   //(Taken from assignment 5 and redone ) readSensorData -> read()
+  // Old trusty protocol, kinda leaky at times 
   void read() {
     serial.write('a');
     String input = "";
@@ -91,4 +92,3 @@ class ArduinoReader{
     }
   }
 }
-//println("[SERIAL] TIMED OUT WITH CONTROLLER");

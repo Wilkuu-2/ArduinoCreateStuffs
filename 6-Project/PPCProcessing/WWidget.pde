@@ -1,4 +1,10 @@
-
+/*
+  WWidget 
+  
+  a superclass for anything gui related that has to be displayes
+  
+  2022 - Jakub Stachusrki
+*/
 
 
 final color defCol = color(255, 255, 255, 100);
