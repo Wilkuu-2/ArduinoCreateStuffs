@@ -1,0 +1,5 @@
+
+[Tutorial]: Use left and right on the pad to switch between windows
+[Tutorial]: Click the little button to pick a wave window to edit (the bottom wave is the combination and is not directly changable)
+[Tutorial]: You can turn the controller to invert the wave when it's selected.
+[Hav Fun!]
