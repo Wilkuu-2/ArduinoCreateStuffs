@@ -1,4 +1,4 @@
-/* //<>// //<>// //<>// //<>// //<>// //<>//
+/* // //<>//
  * MainWidget 
  * The parent of all widgets, also handles the joystick and selection 
  * 
@@ -7,7 +7,6 @@
  
 
 class MainWidget extends WWidget {
-
   Selectable selected = null;
   PVector prevXY = new PVector(0, 0);
   boolean prevClick = false;

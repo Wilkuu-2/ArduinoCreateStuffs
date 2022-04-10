@@ -12,8 +12,9 @@ import ddf.minim.ugens.*;
  */
 
 
-final static float totVol= 0.05;
+final static float totVol= 0.7;
 final float margin = 30;
+
 MainWidget mainWidget;
 WWaveConfig config;
 ArduinoReader read;
@@ -40,7 +41,7 @@ void setup() {
 
   wSetTot = new WaveSet();
 
-  // Add wave View
+  // Add WaveViews
   for (int i = 0; i <= 4; i ++) {
     WaveProv wPi = new WaveProv(ao);  // -- Wave Providers
     WaveSet  wSi = new WaveSet(wPi);  // -- Wave sets

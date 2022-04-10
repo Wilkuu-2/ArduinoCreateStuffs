@@ -11,7 +11,7 @@
 import processing.serial.*;
 
 static final int packetSize = 26;
-static final int readTimeout  = 200;
+static final int readTimeout  = 10;
 final int darkColor  = color(50, 50, 10);
 final int lightColor = color(200, 200, 40);
 
@@ -83,7 +83,7 @@ class ArduinoReader{
         return;
       } else {  //Wait for more bytes when there is not enough
         try {
-          Thread.sleep(5);
+          Thread.sleep(1);
         }
         catch (Exception E) {
           assert false;

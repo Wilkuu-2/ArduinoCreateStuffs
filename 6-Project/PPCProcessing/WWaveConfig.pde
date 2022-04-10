@@ -102,11 +102,6 @@ class WWaveConfig extends WWidget implements Selectable {
     }
   }
 
-  // -- Get the Provider from the wave
-  WaveProv getWaveProv(int i) {
-    return view.getWaveProv(i);
-  }
-
   // -- Set the view managed by the configuration widget
   void setView(WWaveView v) {
     if (view != null)
